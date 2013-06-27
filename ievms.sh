@@ -136,7 +136,7 @@ check_unar() {
     then
         hash unar 2>&- || install_unar
     else
-        hash unar 2>&- || fail "Linux support requires unar (sudo apt-get install for Ubuntu/Debian)"
+        hash 7za e 2>&- || fail "Linux support requires p7zip-full (sudo apt-get install for Ubuntu/Debian)"
     fi
 }
 
@@ -318,7 +318,7 @@ build_ievm() {
         download "OVA ZIP" "${url}" "${archive}"
 
         log "Extracting OVA from ${ievms_home}/${archive}"
-        unar "${archive}" || fail "Failed to extract ${archive} to ${ievms_home}/${ova}, unar command returned error code $?"
+        7za e "${archive}" || fail "Failed to extract ${archive} to ${ievms_home}/${ova}, unar command returned error code $?"
     fi
 
     log "Checking for existing ${vm} VM"
