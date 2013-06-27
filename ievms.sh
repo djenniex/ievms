@@ -136,7 +136,7 @@ check_unar() {
     then
         hash unar 2>&- || install_unar
     else
-        hash 7za e 2>&- || fail "Linux support requires p7zip-full (sudo apt-get install for Ubuntu/Debian)"
+        hash 7za 2>&- || fail "Linux support requires p7zip-full (sudo apt-get install for Ubuntu/Debian)"
     fi
 }
 
